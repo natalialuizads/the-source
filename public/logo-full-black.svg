@@ -1,0 +1,9 @@
+<svg width="220" height="50" viewBox="0 0 220 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, 2) scale(0.7)">
+    <path d="M32 4L6 19V45L32 60L58 45V19L32 4Z" stroke="black" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M6 19L32 34M58 19L32 34M32 34V60" stroke="black" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M40 38L48 43.5L40 49" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M50 51H56" stroke="black" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="55" y="34" fill="black" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="24" letter-spacing="1">THE SOURCE</text>
+</svg>
