@@ -53,16 +53,29 @@ export function Typewriter({ text, speed = 30, delay = 0, className = '', onComp
 
         return () => clearTimeout(timeout);
       }
-    } else if (onComplete) {
+    } else {
+      // All lines finished
+    }
+  }, [hasStarted, currentLineIndex, currentCharIndex, lines, speed]);
+
+  // Handle completion separately to avoid infinite loops with onComplete dependency
+  useEffect(() => {
+    if (hasStarted && currentLineIndex >= lines.length && onComplete) {
       onComplete();
     }
-  }, [hasStarted, currentLineIndex, currentCharIndex, lines, speed, onComplete]);
+  }, [hasStarted, currentLineIndex, lines.length]);
 
   return (
     <div className={className}>
       {displayedText.map((line, index) => (
         <div key={index} className="whitespace-pre-wrap">
-          {line}
+          {line.split(/(\[OK\])/g).map((part, i) =>
+            part === '[OK]' ? (
+              <span key={i} className="text-neon-green">{part}</span>
+            ) : (
+              <span key={i}>{part}</span>
+            )
+          )}
         </div>
       ))}
     </div>
