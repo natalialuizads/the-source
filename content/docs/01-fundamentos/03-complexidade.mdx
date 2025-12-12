@@ -1,0 +1,25 @@
+---
+title: Complexidade
+description: Big O Notation
+---
+
+# Complexidade de Algoritmos (Big O)
+
+A notação Big O descreve o desempenho ou a complexidade de um algoritmo.
+
+## Complexidades Comuns
+
+- **O(1)**: Constante (ex: acesso a array por índice).
+- **O(log n)**: Logarítmica (ex: busca binária).
+- **O(n)**: Linear (ex: loop simples).
+- **O(n log n)**: Linearitmica (ex: quicksort, mergesort).
+- **O(n^2)**: Quadrática (ex: nested loops).
+
+```javascript
+// O(n) - Linear Time
+function printAll(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+  }
+}
+```

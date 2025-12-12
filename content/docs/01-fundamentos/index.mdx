@@ -1,0 +1,30 @@
+---
+title: Fundamentos
+description: Base teórica essencial
+---
+
+# Fundamentos
+
+Bem-vindo à seção de Fundamentos. Aqui você encontrará conceitos essenciais para o desenvolvimento de software.
+
+## Tópicos Principais
+
+- **Algoritmos**: Lógica de programação e resolução de problemas.
+- **Estruturas de Dados**: Arrays, Listas, Árvores, Grafos.
+- **Arquitetura de Computadores**: Como o hardware executa seu código.
+- **Redes**: Protocolos HTTP, TCP/IP, DNS.
+
+```javascript
+// Exemplo de Algoritmo: Busca Binária
+function binarySearch(arr, target) {
+  let left = 0;
+  let right = arr.length - 1;
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+    if (arr[mid] === target) return mid;
+    if (arr[mid] < target) left = mid + 1;
+    else right = mid - 1;
+  }
+  return -1;
+}
+```

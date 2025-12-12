@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Typewriter } from './components/Typewriter';
+import { useEffect, useState } from 'react';
 import { CommandItem } from './components/CommandItem';
 import { TerminalWindow } from './components/TerminalWindow';
+import { Typewriter } from './components/Typewriter';
 
 export default function HomePage() {
   const [step, setStep] = useState(0);
@@ -83,7 +83,7 @@ export default function HomePage() {
 
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 delay-100">
               <CommandItem
-                href="/docs/fundamentos"
+                href="/docs/01-fundamentos"
                 command="$ cd"
                 path="/01-fundamentos"
                 comment="// Ir para Algoritmos, Estrutura de Dados..."
@@ -96,7 +96,7 @@ export default function HomePage() {
 
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 delay-200">
               <CommandItem
-                href="/docs/stack"
+                href="/docs/02-minha-stack"
                 command="$ cd"
                 path="/02-minha-stack"
                 comment="// React, Node, Docker e ferramentas."

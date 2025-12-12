@@ -1,0 +1,31 @@
+---
+title: TypeScript
+description: JavaScript com tipagem estática
+---
+
+# TypeScript
+
+Superset tipado de JavaScript.
+
+## Tipos Básicos
+
+```typescript
+let isDone: boolean = false;
+let decimal: number = 6;
+let color: string = "blue";
+let list: number[] = [1, 2, 3];
+```
+
+## Interfaces
+
+```typescript
+interface User {
+  id: number;
+  name: string;
+  email?: string; // Opcional
+}
+
+function registerUser(user: User) {
+  // ...
+}
+```

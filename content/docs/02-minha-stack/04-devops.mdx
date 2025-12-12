@@ -1,0 +1,26 @@
+---
+title: DevOps
+description: CI/CD e Infraestrutura
+---
+
+# DevOps
+
+Práticas para automatizar processos entre desenvolvimento e TI.
+
+## Ferramentas
+
+- **Docker**: Containers isolados.
+- **GitHub Actions**: Automação de workflow (CI/CD).
+- **Vercel**: Plataforma de deployment frontend.
+
+## Exemplo Dockerfile
+
+```dockerfile
+FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+CMD ["npm", "start"]
+```

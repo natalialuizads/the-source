@@ -1,0 +1,48 @@
+---
+title: Docker Commands
+description: Comandos rápidos para Docker
+---
+
+# Docker Commands
+
+## Containers
+
+```bash
+# Listar rodando
+docker ps
+
+# Listar todos
+docker ps -a
+
+# Parar container
+docker stop <id>
+
+# Remover container
+docker rm <id>
+
+# Logs
+docker logs <id> -f
+```
+
+## Images
+
+```bash
+# Listar imagens
+docker images
+
+# Remover imagem
+docker rmi <id>
+
+# Buildar imagem
+docker build -t nome-imagem .
+```
+
+## Docker Compose
+
+```bash
+# Subir
+docker-compose up -d
+
+# Derrubar
+docker-compose down
+```

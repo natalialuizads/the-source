@@ -1,0 +1,34 @@
+---
+title: Estruturas de Dados
+description: Organização e armazenamento de dados
+---
+
+# Estruturas de Dados
+
+Formas de organizar e armazenar dados para acesso e modificação eficientes.
+
+## Tipos Comuns
+
+- **Arrays**: Coleção linear de elementos.
+- **Linked Lists**: Elementos lineares conectados por nós.
+- **Stacks (Pilhas)**: LIFO (Last In First Out).
+- **Queues (Filas)**: FIFO (First In First Out).
+- **Hash Tables**: Mapeamento chave-valor.
+- **Trees (Árvores)**: Estrutura hierárquica.
+- **Graphs (Grafos)**: Nós conectados por arestas.
+
+## Exemplo: Stack em JS
+```javascript
+class Stack {
+  constructor() {
+    this.items = [];
+  }
+  push(element) {
+    this.items.push(element);
+  }
+  pop() {
+    if (this.items.length == 0) return "Underflow";
+    return this.items.pop();
+  }
+}
+```
