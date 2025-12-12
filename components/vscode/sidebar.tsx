@@ -18,7 +18,7 @@ namespace PageTree {
   }
 }
 
-import { ChevronDown, ChevronRight, FileCode, Folder, FolderOpen } from 'lucide-react';
+import { ChevronDown, ChevronRight, File, Folder, FolderOpen } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -127,7 +127,7 @@ function TreeNode({ node, level }: { node: any; level: number }) {
         )}
         style={{ paddingLeft: `${level * 12 + 30}px` }} 
       >
-        <FileCode size={18} className="mr-2 opacity-80 text-muted-gray" />
+        <File size={18} className="mr-2 opacity-80 text-muted-gray" />
         <span className="truncate">{node.name}</span>
       </Link>
     );
