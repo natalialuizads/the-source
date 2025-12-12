@@ -12,13 +12,7 @@
 
 :root {
   /* Fumadocs Theme Overrides */
-  --background: 13 17 16; /* #0D1110 converted to RGB-ish or just use hex if supported by fumadocs variables, but usually they expect HSL or RGB values without units. Let's try to stick to what Fumadocs expects. 
-     Actually, Fumadocs uses HSL usually. 
-     #0D1110 -> HSL(165, 13%, 6%)
-     #22C55E -> HSL(142, 71%, 45%)
-     #E6EDE9 -> HSL(146, 17%, 92%)
-     #8F9E98 -> HSL(156, 8%, 59%)
-  */
+  --background: 13 17 16; 
   
   /* Base Colors */
   --background: 165 13% 6%;

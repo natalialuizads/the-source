@@ -1,9 +1,9 @@
 'use client';
 
+import { CommandItem } from '@/components/terminal/CommandItem';
+import { TerminalWindow } from '@/components/terminal/TerminalWindow';
+import { Typewriter } from '@/components/terminal/Typewriter';
 import { useEffect, useState } from 'react';
-import { CommandItem } from './components/CommandItem';
-import { TerminalWindow } from './components/TerminalWindow';
-import { Typewriter } from './components/Typewriter';
 
 export default function HomePage() {
   const [step, setStep] = useState(0);
