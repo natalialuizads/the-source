@@ -1,29 +1,26 @@
-'use client';
+"use client";
 
-import { usePathname, useRouter } from 'next/navigation';
-import { ReactNode, useEffect, useState } from 'react';
-import { TabsContext } from './tabs-context';
+import { usePathname, useRouter } from "next/navigation";
+import { ReactNode, useEffect, useState } from "react";
+import { TabsContext } from "./tabs-context";
 
 export function TabsProvider({ children }: { children: ReactNode }) {
   const [tabs, setTabs] = useState<string[]>([]);
   const pathname = usePathname();
   const router = useRouter();
 
-  // Sync pathname with tabs
-  // Sync pathname with tabs
   useEffect(() => {
-     if (pathname && pathname !== '/') {
-        setTabs((prev) => {
-            if (prev.includes(pathname)) return prev;
-            const newTabs = [...prev, pathname];
-             if (newTabs.length > 10) {
-                return newTabs.slice(1);
-             }
-             return newTabs;
-        });
-     }
+    if (pathname && pathname !== "/") {
+      setTabs((prev) => {
+        if (prev.includes(pathname)) return prev;
+        const newTabs = [...prev, pathname];
+        if (newTabs.length > 10) {
+          return newTabs.slice(1);
+        }
+        return newTabs;
+      });
+    }
   }, [pathname]);
-
 
   const addTab = (path: string) => {
     if (!tabs.includes(path)) {
@@ -38,15 +35,13 @@ export function TabsProvider({ children }: { children: ReactNode }) {
   const removeTab = (path: string) => {
     const newTabs = tabs.filter((t) => t !== path);
     setTabs(newTabs);
-    
-    // Handle closing current active tab
+
     if (path === pathname) {
-        // Redirect to the last tab, or home if empty
-        if (newTabs.length > 0) {
-            router.push(newTabs[newTabs.length - 1]);
-        } else {
-            router.push('/');
-        }
+      if (newTabs.length > 0) {
+        router.push(newTabs[newTabs.length - 1]);
+      } else {
+        router.push("/");
+      }
     }
   };
 

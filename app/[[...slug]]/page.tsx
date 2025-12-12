@@ -1,4 +1,5 @@
 import { getPageImage, source } from '@/lib/source';
+import { cn } from '@/lib/utils';
 import { getMDXComponents } from '@/mdx-components';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import type { Metadata } from 'next';
@@ -8,17 +9,15 @@ export default async function Page(props: PageProps<'/[[...slug]]'>) {
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();
-
   const MDX = page.data.body;
 
   return (
-    <div className="flex flex-col gap-4 text-[#cccccc]">
-
-
-      <div className="prose prose-invert max-w-none prose-sm text-[#cccccc]">
+    <div className={cn("flex flex-col gap-4 text-[#cccccc]")}> 
+      <div className={cn(
+        "prose prose-invert max-w-none prose-sm text-[#cccccc]" 
+      )}>
         <MDX
           components={getMDXComponents({
-            // this allows you to link to other pages with relative file paths
             a: createRelativeLink(source, page),
           })}
         />

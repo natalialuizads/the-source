@@ -1,38 +1,54 @@
-import { AlertTriangle, Bell, Github, RefreshCw } from 'lucide-react';
+import { cn } from "@/lib/utils";
+import { Bell, GitBranch, Wifi, XCircle } from "lucide-react";
 
 export function StatusBar() {
   return (
-    <div className="h-6 bg-[#1e1e1e] text-off-white border-t border-t-neon-green flex items-center justify-between px-2 text-[11px select-none text-xs font-bold">
-      <div className="flex items-center gap-3">
-
-        <div className="flex items-center gap-1 hover:bg-[#ffffff1f] px-1 cursor-pointer">
-           <RefreshCw size={12} />
+    <footer
+      className={cn(
+        "h-6 flex items-center justify-between px-2",
+        "bg-[#007acc] text-white text-xs select-none"
+      )}
+      aria-label="Status Bar"
+    >
+      <div className="flex items-center gap-4">
+        <div
+          className="flex items-center gap-1 hover:bg-[#ffffff1f] px-1 rounded cursor-pointer"
+          title="Git Branch"
+        >
+          <GitBranch size={12} />
+          <span>main</span>
         </div>
-        <div className="flex items-center gap-1 hover:bg-[#ffffff1f] px-1 cursor-pointer">
-          <AlertTriangle size={12} />
+        <div className="flex items-center gap-1 hover:bg-[#ffffff1f] px-1 rounded cursor-pointer">
+          <XCircle size={12} />
+          <span>0</span>
           <span>0</span>
         </div>
       </div>
-      
-      <div className="flex items-center gap-3">
-        <div className="flex items-center gap-1 hover:bg-[#ffffff1f] px-1 cursor-pointer">
-           <span>Ln 1, Col 1</span>
+
+      <div className="flex items-center gap-4">
+        <div className="flex items-center gap-1 hover:bg-[#ffffff1f] px-1 rounded cursor-pointer hidden md:flex">
+          <span>Ln 10, Col 42</span>
         </div>
-        <div className="flex items-center gap-1 hover:bg-[#ffffff1f] px-1 cursor-pointer">
-           <span>UTF-8</span>
+        <div className="flex items-center gap-1 hover:bg-[#ffffff1f] px-1 rounded cursor-pointer hidden md:flex">
+          <span>UTF-8</span>
         </div>
-        <div className="flex items-center gap-1 hover:bg-[#ffffff1f] px-1 cursor-pointer">
-           <div className="font-bold">{}</div>
-           <span>Markdown</span>
+        <div className="flex items-center gap-1 hover:bg-[#ffffff1f] px-1 rounded cursor-pointer hidden md:flex">
+          <span>TypeScript JSX</span>
         </div>
-        <div className="flex items-center gap-1 hover:bg-[#ffffff1f] px-1 cursor-pointer">
-           <Bell size={12} />
+        <div
+          className="flex items-center gap-1 hover:bg-[#ffffff1f] px-1 rounded cursor-pointer"
+          title="Go Live"
+        >
+          <Wifi size={12} />
+          <span>Go Live</span>
         </div>
-        <a href="https://github.com/natalialuizads/the-source" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:bg-[#ffffff1f] px-1 cursor-pointer no-underline text-inherit">
-          <Github size={12} />
-          <span className="font-bold">the source</span>
-        </a>
+        <div
+          className="flex items-center gap-1 hover:bg-[#ffffff1f] p-1 rounded cursor-pointer"
+          title="Notifications"
+        >
+          <Bell size={12} />
+        </div>
       </div>
-    </div>
+    </footer>
   );
 }
